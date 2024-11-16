@@ -28,6 +28,8 @@
 
 5. Run `docker ps` and verify if the judgehost containers are up and runnning (You can use `docker logs judgehost-X-1`/`docker logs judgehost-X-2` command to inspect logs and check if there is any issues).
 
+6. Using `Initial admin password` login to the admin panel of domjudge and verify if the judgehosts are connected to the domserver correctly (the naming convention of the judgehosts will help you to find the judgehost server in case of any issues).
+
 > **_NOTE1:_**  It's recommended to test the latest version of docker images and replace `latest` tag with the actual tag to prevent further issues during the contest.
 
 > **_NOTE2:_**  It's recommended to start 2 judgehosts on each server as the `docker-compose` declares.
