@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  judgehost-X-1:
+    container_name: judgehost-X-1
+    image: domjudge/judgehost:latest
+    privileged: true
+    hostname: judgedaemon-X
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - judgehost_data:/opt/domjudge/judgehost
+    networks:
+      - domjudge-network
+    environment:
+      - CONTAINER_TIMEZONE=Asia/Tehran
+      - DOMSERVER_BASEURL=https://daavar.ce.aut.ac.ir:443/
+      - DAEMON_ID=0
+      - JUDGEDAEMON_PASSWORD=<initial-judgehost-password>
+
+  judgehost-X-2:
+    container_name: judgehost-X-2
+    image: domjudge/judgehost:latest
+    privileged: true
+    hostname: judgedaemon-X
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - judgehost_data:/opt/domjudge/judgehost
+    networks:
+      - domjudge-network
+    environment:
+      - CONTAINER_TIMEZONE=Asia/Tehran
+      - DOMSERVER_BASEURL=https://daavar.ce.aut.ac.ir:443/
+      - DAEMON_ID=1
+      - JUDGEDAEMON_PASSWORD=<initial-judgehost-password>
+
+networks:
+  domjudge-network:
+    driver: bridge
+
+volumes:
+  judgehost_data:
