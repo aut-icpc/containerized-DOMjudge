@@ -12,9 +12,13 @@
 
 5. Run `docker ps` and verify if the domserver and mysql container are up and runnning (You can use `docker logs domserver`/`docker logs mariadb` command to inspect logs and check if there is any issues). The domserver has a health check component which shows if it's healthy (You might need to wait about a minute for it to become healthy).
 
-6. Run `docker logs domserver` so that you can retreive `Initial admin password` to login as admin and `Initial judgehost password` in order to config judgehosts.
+6. Run `docker logs domserver` so that you can retrieve `Initial admin password` to login as admin and `Initial judgehost password` in order to config judgehosts.
 
 > **_NOTE:_**  It's recommended to test the latest version of docker images and replace `latest` tag with the actual tag to prevent further issues during the contest.
+
+> **_NOTE:_**  You can also retrieve admin password by running `docker exec -it domserver cat /opt/domjudge/domserver/etc/initial_admin_password.secret`.
+
+> **_NOTE:_**  You can also retrieve admin password by running `docker exec -it domserver cat /opt/domjudge/domserver/etc/restapi.secret`.
 
 ## Setup judgehosts (data plane)
 
