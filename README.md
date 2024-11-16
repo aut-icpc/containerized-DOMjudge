@@ -18,7 +18,7 @@
 
 > **_NOTE:_**  You can also retrieve admin password by running `docker exec -it domserver cat /opt/domjudge/domserver/etc/initial_admin_password.secret`.
 
-> **_NOTE:_**  You can also retrieve admin password by running `docker exec -it domserver cat /opt/domjudge/domserver/etc/restapi.secret`.
+> **_NOTE:_**  You can also retrieve judgehost password by running `docker exec -it domserver cat /opt/domjudge/domserver/etc/restapi.secret`.
 
 ## Setup judgehosts (data plane)
 
